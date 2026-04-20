@@ -1,0 +1,311 @@
+
+body {
+    font-family:'Roboto' , sans-serif;
+    margin: 0;
+}
+          
+.header-links a {
+    color:#ffffff;
+    padding: 5px 15px;
+    text-decoration: none;
+    border-radius: 15PX;     
+}
+
+
+.header-links a:hover {
+    background-color:#FEB139;
+}
+            
+
+.buttons:hover {
+    background-color:wheat;
+}
+
+.buttons {
+    background-color:#FEB139;
+    color:#232F3E;
+    border:none;
+    padding: 10px 25px;
+    border-radius: 15PX;
+    font-size: 16px;
+}
+
+.st1 {
+    background-color: #232F3E;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 0px 50px;
+    position: relative; 
+    gap: 80px;
+   
+} 
+
+.logo-img {
+    height: auto;
+    width: 200px; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.header-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 300px;
+}
+
+.st1 > .header-links:last-child {
+    justify-content: flex-end;
+}
+
+
+.landing-page{
+     background-color: #232F3E;
+    display: flex;
+    justify-content: space-between;   
+    padding: 15px 50px;
+    align-items:center;
+    color: #ffffff;
+    border-radius: 0    0   50px    50px ;
+}   
+
+.landing-page-Search{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+}
+
+
+.landing-page-Search input{
+    border-radius:50px;
+    border:none;
+    outline:none;
+    height: 35px;
+    padding:0 100px 0 20px  ; 
+    width: 250px;    
+}
+
+.landing-page-Search button {
+    position: absolute;
+    right: 0px;
+    height: 35px;
+    border-radius: 50px;
+}
+                      
+.img-container img{ 
+    border-radius:20px ;
+}
+
+.landing-page-left-section{
+    width: auto;
+}
+                       
+.Span{ 
+    font-size:48px;
+    color: #FEB139;
+}
+
+.landing-page-left-section h1{
+    font-size: 32px; ;
+}
+
+.landing-page-left-section p{
+    font-size: 18px;     
+}
+
+
+/* تنسيق قسم الكروت */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+/* شكل الكارت الواحد */
+.product-card {
+    background: white;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(35, 47, 62, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain; 
+    padding:15px; 
+    box-sizing: border-box; 
+    background-color: #ffffff; 
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #232F3E;
+}
+
+.add-btn {
+    background: #FEB139;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
+/* قسم الكروت من بره */
+.products-section {
+    padding: 50px 0; /* شيلنا المسافة الجانبية عشان الكروت تخرج وتدخل من الشاشة بحرية */
+    background-color: #f9f9f9;
+    overflow: hidden; /* بيمنع ظهور شريط تمرير (Scrollbar) مزعج أسفل الشاشة */
+}
+
+
+
+/* حاوية الكروت نفسها */
+.cards-container {
+    display: flex;
+    flex-wrap: nowrap; /* بيكبرهم يفضلوا في صف واحد مستقيم */
+    gap: 25px;
+    width: max-content; /* بيدي الحاوية عرض يكفي الـ 6 كروت براحتهم */
+    animation: autoScroll 15s linear infinite alternate; /* أمر الحركة التلقائية */
+}
+
+
+/* عشان الحركة تقف لما تقف بالماوس على كارت عشان يقرأ السعر */
+.cards-container:hover {
+    animation-play-state: paused;
+}
+
+
+
+/* الحركة نفسها (رايح جاي) */
+@keyframes autoScroll {
+    0% { transform: translateX(50px); }
+    100% { transform: translateX(calc(-100% + 100vw - 50px)); }
+}
+
+
+
+/* الأكواد دي هتشتغل بس لو حجم الشاشة 800 بكسل أو أصغر (يعني موبايل أو تابلت) */
+@media (max-width: 800px) {
+    /* ترتيب الهيدر */
+    .st1 {
+        flex-direction: column; /* بيخلي اللوجو والروابط فوق بعض بدل جنب بعض */
+        gap: 20px;
+        height: auto;
+        padding: 20px;
+        border-radius: 0 0 30px 30px;
+    }
+    
+    /* تظبيط الروابط في الهيدر */
+    .st1 > .header-links:last-child {
+        justify-content: center;
+    }
+    .header-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* ترتيب الصفحة الرئيسية (Landing Page) */
+    .landing-page {
+        flex-direction: column; /* بيخلي الكلام فوق وصورة الكمبيوتر تحت */
+        text-align: center; /* بيوسطن الكلام */
+        padding: 30px 20px;
+        border-radius: 0 0 30px 30px;
+    }
+
+    /* تظبيط شريط البحث عشان يبقى في النص */
+    .landing-page-Search {
+        margin: 20px auto;
+    }
+
+    /* تصغير صورة الكمبيوتر الرئيسية */
+    .img-container img {
+        width: 100%;
+        max-width: 350px; /* عشان متكبرش أوي على الموبايل */
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+/* تنسيق الفوتر بالكامل */
+.site-footer {
+    background-color: #232F3E;
+    color: #ffffff;
+    padding-top: 50px;
+    margin-top: 50px;
+    /* السطر السحري هنا */
+    border-radius: 50px 50px 0 0; 
+}
+
+/* حاوية الأعمدة */
+.footer-container {
+    display: flex;
+    justify-content: space-around; /* بيوزع الـ 3 أعمدة بمسافات متساوية */
+    flex-wrap: wrap; /* عشان لو الشاشة صغرت ينزلوا تحت بعض */
+    padding: 0 50px 30px;
+}
+
+/* العمود الواحد */
+.footer-col {
+    width: 250px;
+    display: flex;
+    flex-direction: column; /* بيخلي الكلام والروابط جوه العمود تحت بعض */
+    gap: 15px; /* مسافة بين السطور */
+}
+
+.footer-col h3 {
+    color: #FEB139; /* لون العناوين البرتقالي بتاعك */
+    margin: 0 0 10px 0;
+    font-size: 22px;
+}
+
+/* تنسيق الروابط جوه الفوتر */
+.footer-col a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s; /* نعومة في الحركة */
+}
+
+/* حركة صايعة لما تقف بالماوس على اللينك */
+.footer-col a:hover {
+    color: #FEB139;
+    padding-left: 10px; /* اللينك بيتحرك خطوة لليمين كإنه سهم */
+}
+
+/* الشريط الأخير (حقوق الملكية) */
+.footer-bottom {
+    background-color: #1a232e; /* لون أغمق سنة من الفوتر نفسه */
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
